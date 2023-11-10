@@ -16,7 +16,7 @@ const ShowUser = () => {
       try {
         // ABORDAGEM QUE TENTEI USAR E NÃO FUNCIONOU
         // const response = await fetch(`http://localhost:3000/api/base/base-users/${id}`);
-        const response = await fetch("http://localhost:3000/api/base/base-users");
+        const response = await fetch(`http://localhost:3000/api/base/base-users/${id}`);
         const data = await response.json();
         setUser(data);
       } catch (error) {
