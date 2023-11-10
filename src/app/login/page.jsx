@@ -45,20 +45,11 @@ export default function LoginUsers() {
           console.log("VALIDADO!!!!");
         if (result.status) {
             
-                     //Gerando o TOKEN de acesso!
-          const token = Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
-
-          //Armazenando o TOKEN no SessionStorage!
-          sessionStorage.setItem("token-user", token);
-
-          //Armazenando o objeto USUÁRIO no SessionStorage!
-          sessionStorage.setItem("user-info", JSON.stringify(result.user));
-
             setMsg("Login efetuado com Sucesso!!");
             setTimeout(()=>{
                 setMsg("");
                 //Redirecionando para a página HOME!
-                window.location.href = "/";
+                navigate.push("/");
             },5000);
 
         }else{
@@ -111,7 +102,7 @@ export default function LoginUsers() {
               <button>LOGIN</button>
             </div>
             <div className="p-5 m-auto w-2/4">
-              <p>Se você não é cadastrado em nosso sistema, <Link href="/login/cad" className="text-amber-500 hover:text-amber-200">CLIQUE AQUI</Link> para se registrar.</p>
+              <p>Se você não é cadastrado em nosso sistema, <Link href="/cad-user" className="text-amber-500 hover:text-amber-200">CLIQUE AQUI</Link> para se registrar.</p>
             </div>
           </fieldset>
         </form>
